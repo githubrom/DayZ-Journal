@@ -1,0 +1,6 @@
+{
+  "name": "Dayz-journal",
+  "tagline": "history of DayZ server play chronicle",
+  "body": "# DayZ-Journal\r\n[**DOWNLOAD**](https://github.com/githubrom/Dayz-Journal/releases)\r\n\r\nhistory of DayZ server playing chronicle. monitor your server history with simple and smart method and save the history to csv-journal \r\n\r\n* monitor the DayzProfile file\r\n* simple and smart method \r\n* save the history to csv-journal\r\n\r\n\r\n![screenshot1](https://cloud.githubusercontent.com/assets/5863433/20041603/62e4b01e-a46c-11e6-826e-464196b9095a.PNG)\r\n\r\n* doubleclick on listitem to show server liveinfos, update every 30 seconds\r\n* shows current users, server- and playeruptime\r\n\r\n![screenshot2](https://cloud.githubusercontent.com/assets/5863433/20041604/66063d08-a46c-11e6-892e-ab0163675371.PNG)\r\n\r\n\r\n`thanks to https://github.com/PredatH0r for modified version of https://querymaster.codeplex.com/`\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
