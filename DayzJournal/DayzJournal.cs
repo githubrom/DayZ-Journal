@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -154,23 +155,38 @@ namespace DayzJournal
 		public string Name { get; set; }
 	}
 
-	internal class ListViewItemComparer : System.Collections.IComparer
+	internal class ListViewItemComparer : IComparer
 	{
 		private readonly int _col;
 		private readonly SortOrder _order;
+
 		public ListViewItemComparer()
 		{
 			_col = 0;
 			_order = SortOrder.Ascending;
 		}
+
 		public ListViewItemComparer(int column, SortOrder order)
 		{
 			_col = column;
 			_order = order;
 		}
+
 		public int Compare(object x, object y)
 		{
-			var returnVal = String.CompareOrdinal(((ListViewItem)x).SubItems[_col].Text, ((ListViewItem)y).SubItems[_col].Text);
+			int returnVal;
+
+			var listviewX = ((ListViewItem) x).SubItems[_col].Text;
+			var listviewY = ((ListViewItem) y).SubItems[_col].Text;
+
+			DateTime firstDate;
+			DateTime secondDate;
+
+			if ((DateTime.TryParse(listviewX, out firstDate)) && (DateTime.TryParse(listviewY, out secondDate)))
+				returnVal = DateTime.Compare(firstDate, secondDate);
+			else
+				returnVal = string.CompareOrdinal(listviewX, listviewY);
+
 			if (_order == SortOrder.Descending)
 				returnVal *= -1;
 			return returnVal;

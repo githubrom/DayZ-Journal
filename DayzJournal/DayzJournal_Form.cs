@@ -420,11 +420,11 @@ namespace DayzJournal
 			}
 		}
 
-		private void MasterIpCallback(ReadOnlyCollection<IPEndPoint> endPoints)
+		private void MasterIpCallback(ReadOnlyCollection<IPEndPoint> endPoints, Exception error)
 		{
 			HistoryServer server;
-			
-			if (endPoints != null)
+
+			if (error == null && endPoints != null)
 			{
 				foreach (var endPoint in endPoints)
 				{
